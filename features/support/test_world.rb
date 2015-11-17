@@ -1,10 +1,14 @@
 class TestWorld
+
+  def initialize
+    @people = {}
+  end
+
   def clean
     @people.clear
   end
 
   def add_person(person_alias, person)
-    @people = {} if @people.nil?
     @people[person_alias] = person
   end
 

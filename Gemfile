@@ -6,6 +6,7 @@ gem 'selenium-webdriver', require: false
 gem 'capybara', require: false
 gem 'poltergeist', require: false # Capybara driver for phantom.js
 gem 'parallel_tests' # parallel test execution
+gem 'rake'
 
 gem 'factory_girl' # test data factory
 gem 'site_prism' # pageobjects for capybara
