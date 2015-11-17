@@ -5,7 +5,7 @@ require 'site_prism'
 
 class HomePage < SitePrism::Page
   set_url 'https://duckduckgo.com'
-  set_url_matcher(/duckduckgo.com\/?/)
+  set_url_matcher %r{duckduckgo.com\/?/}
 
   element :search_input, 'input#search_form_input_homepage'
   element :search_button, 'input#search_button_homepage'

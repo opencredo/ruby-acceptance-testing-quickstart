@@ -16,6 +16,4 @@ gem 'rspec-expectations' # expect syntax
 # linting / analysis
 gem 'cuke_sniffer', require: false # cucumber linting
 gem 'rubocop', require: false # ruby linting
-gem 'flog', require: false # ABC analysis
 gem 'flay', require: false # duplicate code analysis
-gem 'flay-actionpack', require: false # stops errors with flay

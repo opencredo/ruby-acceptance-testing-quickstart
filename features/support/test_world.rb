@@ -1,5 +1,4 @@
 class TestWorld
-
   def initialize
     @people = {}
   end

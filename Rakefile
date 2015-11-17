@@ -1,9 +1,9 @@
-task default: %w[demo]
+task default: %w(demo)
 
 task :demo do
-  system("cucumber --tags @demo")
+  system('cucumber -t @demo -t ~@ignore')
 end
 
 task :parallel do
-  system('bundle exec parallel_cucumber ./ -o "-t @parallel"')
+  system('bundle exec parallel_cucumber ./ -o "-t @parallel ~@ignore"')
 end
