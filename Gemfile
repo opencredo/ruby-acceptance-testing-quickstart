@@ -4,11 +4,11 @@ ruby '2.2.0'
 gem 'cucumber', require: false # cuke syntax
 gem 'selenium-webdriver', require: false
 gem 'capybara', require: false
-gem 'poltergeist', require: false  # Capybara driver for phantom.js
+gem 'poltergeist', require: false # Capybara driver for phantom.js
 
 gem 'factory_girl' # test data factory
 gem 'site_prism' # pageobjects for capybara
-gem 'faker' # fake data generator
+gem 'ffaker' # fake data generator
 gem 'rspec-expectations' # expect syntax
 
 # linting / analysis
