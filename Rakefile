@@ -1,40 +1,57 @@
-task default: %w(poltergeist_demo)
+task default: %w(phantomjs)
 
-# default driver
-ENV['DRIVER'] = 'phantom.js'
+@default_driver = 'phantom.js'
+@available_browsers = ["phantomjs", "firefox", "chrome"]
 
-task :demo do
-    puts "Running a demo using #{ENV['DRIVER']}"
-    system('cucumber -t @demo -t ~@ignore')
+def set_driver driver
+  driver ||= @default_driver
+  ENV['DRIVER'] = driver
 end
 
-task :parallel  do
-    puts "Running a parallel demo using #{ENV['DRIVER']}"
-    system('bundle exec parallel_cucumber ./ -o "-t @parallel -t ~@ignore"')
+def demo driver
+  set_driver driver
+  puts "Running a demo using #{ENV['DRIVER']}"
+  system('cucumber -t @demo -t ~@ignore')
 end
 
-task :phantomjs => [:phantomjs_driver, :demo]
-task :firefox => [:firefox_driver, :demo]
-task :chrome => [:chrome_driver, :demo]
-
-task :browserstack => [:browserstack_driver, :demo]
-
-task :parallel_phantomjs => [:phantomjs_driver, :parallel]
-task :parallel_firefox => [:firefox_driver, :parallel]
-task :parallel_chrome=> [:chrome_driver, :parallel]
-
-task :phantomjs_driver do
-    ENV['DRIVER'] = 'phantom.js'
+def parallel_demo driver
+  set_driver driver
+  puts "Running a parallel demo using #{ENV['DRIVER']}"
+  system('bundle exec parallel_cucumber ./ -o "-t @parallel -t ~@ignore"')
 end
 
-task :firefox_driver do
-    ENV['DRIVER'] = 'firefox'
+task :phantomjs do
+  demo 'phantomjs'
 end
 
-task :chrome_driver do
-    ENV['DRIVER'] = 'chrome'
+task :firefox do
+  demo 'firefox'
 end
 
-task :browserstack_driver do
-    ENV['DRIVER'] = 'browserstack'
+task :chrome do
+  demo 'chrome'
+end
+
+task :browserstack do
+  demo 'browserstack'
+end
+
+task :parallel_phantomjs do
+  parallel_demo 'phantomjs'
+end
+
+task :parallel_firefox do
+  parallel_demo 'firefox'
+end
+
+task :parallel_chrome do
+  parallel_demo 'chrome'
+end
+
+task :crossbrowser do
+  @available_browsers.each { |browser| Rake::Task[browser].invoke }
+end
+
+task :parallel_crossbrowser do
+  @available_browsers.each { |browser| Rake::Task["parallel_" + browser].invoke }
 end

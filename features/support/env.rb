@@ -7,10 +7,10 @@ require 'dotenv'
 
 Dotenv.load # loads environment variables from .env file
 
-DEFAULT_CAPYBARA_DRIVER = :poltergeist
-BROWSERSTACK_USERNAME = ENV['BROWSERSTACK_USERNAME']
-BROWSERSTACK_AUTH_KEY = ENV['BROWSERSTACK_AUTH_KEY']
-BROWSERSTACK_URL = "http://#{BROWSERSTACK_USERNAME}:#{BROWSERSTACK_AUTH_KEY}@hub.browserstack.com/wd/hub"
+@default_capybara_driver = :poltergeist
+browserstack_username = ENV['BROWSERSTACK_USERNAME']
+browserstack_auth_key = ENV['BROWSERSTACK_AUTH_KEY']
+@browserstack_url = "http://#{browserstack_username}:#{browserstack_auth_key}@hub.browserstack.com/wd/hub"
 
 # CHROME
 Capybara.register_driver :chrome do |app|
@@ -44,7 +44,7 @@ def setup_browserstack
 
     Capybara::Selenium::Driver.new(app, {
       :browser => :remote,
-      :url => BROWSERSTACK_URL,
+      :url => @browserstack_url,
       :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.new(caps)
       })
     end
@@ -55,7 +55,7 @@ when 'firefox' then :selenium
 when 'chrome' then  :chrome
 when 'phantom.js' then :poltergeist
 when 'browserstack' then :selenium
-else DEFAULT_CAPYBARA_DRIVER
+else @default_capybara_driver
 end
 
 setup_browserstack if ENV['DRIVER'] == 'browserstack'

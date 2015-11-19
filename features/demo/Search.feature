@@ -6,7 +6,7 @@ Scenario: Search using a fixed string
   And I search for "OpenCredo"
   Then I should be on the search results for "OpenCredo"
   And I should see search results for "OpenCredo"
-  And I should see a link to "http://www.opencredo.com/"
+  And I should see a link to "https://www.opencredo.com/"
 
 @demo
 Scenario: Search for a randomised and saved query
