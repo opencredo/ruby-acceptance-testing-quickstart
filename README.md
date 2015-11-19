@@ -1,7 +1,7 @@
 Ruby Acceptance Testing Quickstart
 ==================================
 
-Web acceptance testing - where do you start? This is a quickstart project with good practice that you can clone and extend, rather than having to google constantly to find out the basics. There's some very powerful stuff included in this project and ready to use, including parallel execution, browserstack integration, and aliased random data persistence.
+Web acceptance testing - where do you start? This is a quickstart project with good practice that you can clone and extend, rather than having to google constantly to find out the basics. There's some very powerful stuff included in this project which is ready to use out of the box, including parallel execution, browserstack integration, and aliased random data persistence.
 
 Concepts Included
 -----------------
@@ -61,12 +61,18 @@ Available Rake Tasks
 ---------
 
 `rake demo` will run a headless browser test.
+
 `rake parallel_demo` will execute a demo parallel test.
 
 To specify your browser, there are the following (hopefully self explanatory tasks):
-`rake firefox` or `rake chrome` or `rake phantomjs`
-`rake parallel_firefox` or `rake parallel_chrome` or `rake parallel_phantomjs`
+
+- `rake firefox`
+- `rake chrome`
+- `rake phantomjs`
+- `rake parallel_firefox`
+- `rake parallel_chrome`
+- `rake parallel_phantomjs`
 
 Or if you wish to run every browser, you can run `rake crossbrowser`.
 
-Browserstack is available via `rake browserstack`. You will need to set up your environment variables via the .env file first, to specify your login credentials and required browser/OS.
+Browserstack is available via `rake browserstack`. You will need to set up your environment variables via the .env file first, to specify your login credentials and required browser/OS. This solution works fine for local testing, but it's not hugely secure. If you wish to set it up as part of your continuous integration (and you should want to!), then Browserstack have an excellent guide on [their website](https://www.browserstack.com/automate/continuous-integration) to keep your credentials secure.
