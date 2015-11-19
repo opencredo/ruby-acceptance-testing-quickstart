@@ -33,6 +33,7 @@ GEM
     cuke_sniffer (0.0.8)
       roxml
     diff-lcs (1.2.5)
+    dotenv (2.0.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     ffaker (2.1.0)
@@ -111,6 +112,7 @@ DEPENDENCIES
   capybara
   cucumber
   cuke_sniffer
+  dotenv
   factory_girl
   ffaker
   flay

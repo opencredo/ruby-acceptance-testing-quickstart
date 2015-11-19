@@ -12,6 +12,7 @@ gem 'factory_girl' # test data factory
 gem 'site_prism' # pageobjects for capybara
 gem 'ffaker' # fake data generator
 gem 'rspec-expectations' # expect syntax
+gem 'dotenv' # loads environment variables on startup from .env file
 
 # linting / analysis
 gem 'cuke_sniffer', require: false # cucumber linting

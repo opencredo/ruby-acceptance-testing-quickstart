@@ -17,6 +17,8 @@ task :phantomjs => [:phantomjs_driver, :demo]
 task :firefox => [:firefox_driver, :demo]
 task :chrome => [:chrome_driver, :demo]
 
+task :browserstack => [:browserstack_driver, :demo]
+
 task :parallel_phantomjs => [:phantomjs_driver, :parallel]
 task :parallel_firefox => [:firefox_driver, :parallel]
 task :parallel_chrome=> [:chrome_driver, :parallel]
@@ -31,4 +33,8 @@ end
 
 task :chrome_driver do
     ENV['DRIVER'] = 'chrome'
+end
+
+task :browserstack_driver do
+    ENV['DRIVER'] = 'browserstack'
 end
