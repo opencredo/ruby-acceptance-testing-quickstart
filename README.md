@@ -26,7 +26,9 @@ Make sure you have the following installed before starting:
 - [Ruby bundler gem](http://bundler.io/)
 - [Phantom.js](http://phantomjs.org/download.html)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/) (optional)
-- [Chrome Webdriver](http://chromedriver.storage.googleapis.com/index.html) (optional - put it on your PATH)
+- [Chromedriver](http://chromedriver.storage.googleapis.com/index.html) (optional)
+
+If you're using OSX, Phantom.js and Chromedriver are available via Homebrew.
 
 Key Tools
 ---------
