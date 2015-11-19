@@ -1,4 +1,4 @@
-task default: %w(phantomjs)
+task default: %w(demo)
 
 @default_driver = 'phantom.js'
 @available_browsers = ["phantomjs", "firefox", "chrome"]
@@ -18,6 +18,10 @@ def parallel_demo driver
   set_driver driver
   puts "Running a parallel demo using #{ENV['DRIVER']}"
   system('bundle exec parallel_cucumber ./ -o "-t @parallel -t ~@ignore"')
+end
+
+task :demo do
+  demo 'phantomjs'
 end
 
 task :phantomjs do
