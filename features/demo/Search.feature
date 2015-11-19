@@ -6,10 +6,11 @@ Scenario: Search using a fixed string
   And I search for "OpenCredo"
   Then I should be on the search results for "OpenCredo"
   And I should see search results for "OpenCredo"
+  And I should see a link to "http://www.opencredo.com/"
 
 @demo
 Scenario: Search for a randomised and saved query
-  Given I have a name "Person A"
+  Given the user "Person A" exists
   When I open the homepage
-  And I search for random query "Person A"
-  Then I should be on the search results for query "Person A"
+  And I search for user "Person A"
+  Then I should be on the search results for user "Person A"

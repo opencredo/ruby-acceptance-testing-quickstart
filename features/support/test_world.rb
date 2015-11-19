@@ -1,17 +1,17 @@
 class TestWorld
   def initialize
-    @people = {}
+    @users = {}
   end
 
   def clean
-    @people.clear
+    @users.clear
   end
 
-  def add_person(person_alias, person)
-    @people[person_alias] = person
+  def add_user(user_alias, person)
+    @users[user_alias] = person
   end
 
-  def get_person(person_alias)
-    @people[person_alias]
+  def get_user(user_alias)
+    @users[user_alias]
   end
 end
