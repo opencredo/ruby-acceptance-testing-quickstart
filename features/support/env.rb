@@ -3,6 +3,8 @@ require 'capybara'
 require 'capybara/dsl'
 require 'capybara/poltergeist'
 
+DEFAULT_CAPYBARA_DRIVER = :poltergeist
+
 # CHROME
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
@@ -20,6 +22,14 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, options)
 end
 
-# Capybara.default_driver = :selenium
-Capybara.default_driver = :poltergeist
-# Capybara.javascript_driver = :chrome
+case ENV['DRIVER']
+when 'firefox' then Capybara.default_driver = :selenium
+when 'chrome' then Capybara.default_driver = :chrome
+when 'phantom.js' then Capybara.default_driver = :poltergeist
+when 'browserstack' then setup_browserstack
+else Capybara.default_driver = DEFAULT_CAPYBARA_DRIVER
+end
+
+def setup_browserstack
+  pending
+end
