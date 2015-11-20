@@ -18,3 +18,4 @@ gem 'dotenv' # loads environment variables on startup from .env file
 gem 'cuke_sniffer', require: false # cucumber linting
 gem 'rubocop', require: false # ruby linting
 gem 'flay', require: false # duplicate code analysis
+gem 'cucumber_lint'

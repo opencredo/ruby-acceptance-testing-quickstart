@@ -15,7 +15,6 @@ class ResultsPage < SitePrism::Page
   element :search_button, 'input#search_button'
   sections :search_results, SearchResultSection, 'div.result__body'
 
-
   def search(text)
     search_input.set text
     search_button.click

@@ -17,7 +17,7 @@ end
 def parallel_demo driver
   set_driver driver
   puts "Running a parallel demo using #{ENV['DRIVER']}"
-  system('bundle exec parallel_cucumber ./ -o "-t @parallel -t ~@ignore"')
+  system('bundle exec parallel_cucumber ./ -o "-t @parallel-demo -t ~@ignore"')
 end
 
 task :demo do

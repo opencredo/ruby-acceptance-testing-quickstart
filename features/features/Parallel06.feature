@@ -1,6 +1,6 @@
 Feature: Duckduckgo searching
 
-@parallel
+@parallel-demo
 Scenario: Search using a fixed string
   When I open the homepage
   And I search for "OpenCredo"
