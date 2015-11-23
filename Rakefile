@@ -4,20 +4,21 @@ task default: %w(demo)
 @available_browsers = ["phantomjs", "firefox", "chrome"]
 
 def set_driver driver
-  driver ||= @default_driver
-  ENV['DRIVER'] = driver
+  ENV['DRIVER'] = driver || @default_driver
 end
 
 def demo driver
   set_driver driver
   puts "Running a demo using #{ENV['DRIVER']}"
   system('cucumber -t @demo -t ~@ignore')
+  raise "build failed!" unless $?.exitstatus == 0
 end
 
 def parallel_demo driver
   set_driver driver
   puts "Running a parallel demo using #{ENV['DRIVER']}"
   system('bundle exec parallel_cucumber ./ -o "-t @parallel-demo -t ~@ignore"')
+  raise "build failed!" unless $?.exitstatus == 0
 end
 
 task :demo do
