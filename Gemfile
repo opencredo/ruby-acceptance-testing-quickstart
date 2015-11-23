@@ -14,8 +14,9 @@ gem 'ffaker' # fake data generator
 gem 'rspec-expectations' # expect syntax
 gem 'dotenv' # loads environment variables on startup from .env file
 
+gem 'relish' # online documentation, example at -> https://relishapp.com/burythehammer/ruby-acceptance-testing-quickstart/docs
+
 # linting / analysis
 gem 'cuke_sniffer', require: false # cucumber linting
 gem 'rubocop', require: false # ruby linting
 gem 'flay', require: false # duplicate code analysis
-gem 'cucumber_lint'
