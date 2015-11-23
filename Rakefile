@@ -60,3 +60,5 @@ end
 task :parallel_crossbrowser do
   @browsers.each { |browser| Rake::Task['parallel_' + browser].invoke }
 end
+
+task :travis => [:demo, :firefox, :parallel_phantomjs, :parallel_firefox]

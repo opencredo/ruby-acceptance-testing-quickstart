@@ -7,5 +7,4 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
-  - bundle exec rake crossbrowser
-  - bundle exec rake parallel_crossbrowser
+  - bundle exec rake travis
