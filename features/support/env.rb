@@ -4,6 +4,9 @@ require 'capybara/dsl'
 require 'capybara/poltergeist'
 require 'selenium/webdriver'
 require 'dotenv'
+require "codeclimate-test-reporter"
+
+CodeClimate::TestReporter.start # starts code coverage
 
 Dotenv.load # loads environment variables from .env file
 

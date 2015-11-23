@@ -1,11 +1,12 @@
 Ruby Acceptance Testing Quickstart
 ==================================
 
+[![Build Status](https://travis-ci.org/burythehammer/ruby-acceptance-testing-quickstart.svg?branch=master)](https://travis-ci.org/burythehammer/ruby-acceptance-testing-quickstart)
+
 Web acceptance testing - where do you start? This is a quickstart project with good practice that you can clone and extend, rather than having to google constantly to find out the basics. There's some very powerful stuff included in this project which is ready to use out of the box, including parallel execution, browserstack integration, and aliased random data persistence.
 
-Concepts Included
------------------
-
+Features
+--------
 - Acceptance tests written in plain English
 - Page Object pattern
 - Parallel test execution
@@ -19,7 +20,6 @@ Concepts Included
 
 Dependencies
 ------------
-
 Make sure you have the following installed before starting:
 
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation/) (preferably [with RVM](https://rvm.io/))
@@ -48,24 +48,21 @@ Key Tools
 - [Relish](https://relishapp.com/) - Automatic feature documention generation for Cucumber
 
 Usage
----------
-
-I've developed and tested this on OS X, and it should work fine on Linux too.
-
+-----
 From the command line:
 
 1. Clone the project: `git clone https://github.com/burythehammer/ruby-acceptance-testing-quickstart`
 2. Navigate to the folder and `bundle install` to install all necessary gems.
-3. Start running tests using a set of rake tasks that have already been set up.
+3. Start running tests using the available rake tasks.
 
 Available Rake Tasks
----------
+--------------------
 
 `rake demo` will run a headless browser test.
 
 `rake parallel_demo` will execute a demo parallel test.
 
-To specify your browser, there are the following (hopefully self explanatory tasks):
+To specify your browser, use the following (hopefully self explanatory) tasks:
 
 - `rake firefox`
 - `rake chrome`
@@ -76,4 +73,7 @@ To specify your browser, there are the following (hopefully self explanatory tas
 
 Or if you wish to run every browser, you can run `rake crossbrowser`.
 
-Browserstack is available via `rake browserstack`. You will need to set up your environment variables via the .env file first, to specify your login credentials and required browser/OS. This solution works fine for local testing, but it's not hugely secure. If you wish to set it up as part of your continuous integration (and you should want to!), then Browserstack have an excellent guide on [their website](https://www.browserstack.com/automate/continuous-integration) to keep your credentials secure.
+Browserstack Configuration
+--------------------------
+
+Browserstack is available via `rake browserstack`. You will need to set up your environment variables via the .env file first, to specify your login credentials and required browser/OS. To use this as part of a secure CI environment, Browserstack have an excellent guide on [their website](https://www.browserstack.com/automate/continuous-integration) to keep your credentials secure.
