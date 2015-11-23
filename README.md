@@ -47,8 +47,8 @@ Key Tools
 - [FFaker](https://github.com/ffaker/ffaker) - A random data generation library.
 - [Relish](https://relishapp.com/) - Automatic feature documention generation for Cucumber
 
-Usage
------
+Installing and using
+--------------------
 From the command line:
 
 1. Clone the project: `git clone https://github.com/burythehammer/ruby-acceptance-testing-quickstart`
@@ -62,7 +62,7 @@ Available Rake Tasks
 
 `rake parallel_demo` will execute a demo parallel test.
 
-To specify your browser, use the following (hopefully self explanatory) tasks:
+To specify your browser, use the following (hopefully self-explanatory) tasks:
 
 - `rake firefox`
 - `rake chrome`
