@@ -1,4 +1,4 @@
-Feature: Duckduckgo searching
+Feature: Search for strings on DuckDuckGo
 
 @demo
 Scenario: Search using a fixed string

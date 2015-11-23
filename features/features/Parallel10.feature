@@ -1,4 +1,4 @@
-Feature: Duckduckgo searching
+Feature: Feature: Parallel feature 10
 
 @parallel-demo
 Scenario: Search using a fixed string
