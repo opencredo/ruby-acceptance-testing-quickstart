@@ -1,4 +1,4 @@
-Feature: Feature: Parallel feature 04
+Feature: Parallel feature 04
 
 @parallel-demo
 Scenario: Search using a fixed string
