@@ -1,12 +1,12 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start # starts code coverage
+
 require 'capybara/cucumber'
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/poltergeist'
 require 'selenium/webdriver'
 require 'dotenv'
-require "codeclimate-test-reporter"
-
-CodeClimate::TestReporter.start # starts code coverage
 
 Dotenv.load # loads environment variables from .env file
 
@@ -33,7 +33,6 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 def setup_browserstack
-
   Capybara.register_driver :selenium do |app|
     caps = {
       os: ENV['BROWSERSTACK_OS'],
@@ -41,24 +40,22 @@ def setup_browserstack
       browser:  ENV['BROWSERSTACK_BROWSER'],
       resolution: ENV['BROWSERSTACK_RESOLUTION'],
       browser_version: ENV['BROWSERSTACK_BROWSER_VERSION'],
-      :"browserstack.debug" => "false",
-      :"browserstack.local" => "false",
+      "browserstack.debug": 'false',
+      "browserstack.local": 'false'
     }
 
-    Capybara::Selenium::Driver.new(app, {
-      :browser => :remote,
-      :url => @browserstack_url,
-      :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.new(caps)
-      })
-    end
+    Capybara::Selenium::Driver.new(app,       browser: :remote,
+                                              url: @browserstack_url,
+                                              desired_capabilities: Selenium::WebDriver::Remote::Capabilities.new(caps))
+  end
 end
 
 Capybara.default_driver = case ENV['DRIVER']
-when 'firefox' then :selenium
-when 'chrome' then  :chrome
-when 'phantom.js' then :poltergeist
-when 'browserstack' then :selenium
-else @default_capybara_driver
-end
+                          when 'firefox' then :selenium
+                          when 'chrome' then  :chrome
+                          when 'phantom.js' then :poltergeist
+                          when 'browserstack' then :selenium
+                          else @default_capybara_driver
+                          end
 
 setup_browserstack if ENV['DRIVER'] == 'browserstack'

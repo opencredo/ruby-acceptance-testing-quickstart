@@ -1,24 +1,24 @@
 task default: %w(demo)
 
 @default_driver = 'phantom.js'
-@available_browsers = ["phantomjs", "firefox", "chrome"]
+@browsers = %w(phantomjs firefox chrome)
 
-def set_driver driver
+def use_driver(driver)
   ENV['DRIVER'] = driver || @default_driver
 end
 
-def demo driver
-  set_driver driver
+def demo(driver)
+  use_driver driver
   puts "Running a demo using #{ENV['DRIVER']}"
   system('cucumber -t @demo -t ~@ignore')
-  raise "build failed!" unless $?.exitstatus == 0
+  fail 'build failed!' unless $?.exitstatus == 0
 end
 
-def parallel_demo driver
-  set_driver driver
+def parallel_demo(driver)
+  use_driver driver
   puts "Running a parallel demo using #{ENV['DRIVER']}"
   system('bundle exec parallel_cucumber ./ -o "-t @parallel-demo -t ~@ignore"')
-  raise "build failed!" unless $?.exitstatus == 0
+  fail 'build failed!' unless $?.exitstatus == 0
 end
 
 task :demo do
@@ -54,9 +54,9 @@ task :parallel_chrome do
 end
 
 task :crossbrowser do
-  @available_browsers.each { |browser| Rake::Task[browser].invoke }
+  @browsers.each { |browser| Rake::Task[browser].invoke }
 end
 
 task :parallel_crossbrowser do
-  @available_browsers.each { |browser| Rake::Task["parallel_" + browser].invoke }
+  @browsers.each { |browser| Rake::Task['parallel_' + browser].invoke }
 end
