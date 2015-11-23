@@ -4,7 +4,3 @@ rvm: "2.2.3"
 script:
   - bundle exec rake crossbrowser
   - bundle exec rake parallel_crossbrowser
-
-  addons:
-    code_climate:
-        repo_token: 26905a0077194e0a89e331b434ee5c75ca9a845af5a05288b9fcb58ddf55a530

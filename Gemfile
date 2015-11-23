@@ -20,4 +20,3 @@ gem 'relish' # online documentation, example at -> https://relishapp.com/burythe
 gem 'cuke_sniffer', require: false # cucumber linting
 gem 'rubocop', require: false # ruby linting
 gem 'flay', require: false # duplicate code analysis
-gem 'codeclimate-test-reporter', group: :test, require: nil

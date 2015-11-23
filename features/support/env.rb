@@ -1,6 +1,3 @@
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start # starts code coverage
-
 require 'capybara/cucumber'
 require 'capybara'
 require 'capybara/dsl'
