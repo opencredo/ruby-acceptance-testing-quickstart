@@ -1,8 +1,6 @@
 Ruby Acceptance Testing Quickstart
 ==================================
 
-[![Build Status](https://travis-ci.org/burythehammer/ruby-acceptance-testing-quickstart.svg?branch=master)](https://travis-ci.org/burythehammer/ruby-acceptance-testing-quickstart)
-
 Web acceptance testing - where do you start? This is a quickstart project with good practice that you can clone and extend, rather than having to google constantly to find out the basics. There's some very powerful stuff included in this project which is ready to use out of the box, including parallel execution, browserstack integration, and aliased random data persistence.
 
 Features
