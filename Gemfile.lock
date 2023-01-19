@@ -68,7 +68,7 @@ GEM
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
-    rack (1.6.4)
+    rack (2.1.4.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.0.0)
