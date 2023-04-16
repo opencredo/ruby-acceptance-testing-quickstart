@@ -40,7 +40,7 @@ GEM
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     ffaker (2.1.0)
-    ffi (1.9.10)
+    ffi (1.12.2)
     flay (2.6.1)
       ruby_parser (~> 3.0)
       sexp_processor (~> 4.0)
