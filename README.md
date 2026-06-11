@@ -1,6 +1,9 @@
 Ruby Acceptance Testing Quickstart
 ==================================
 
+> [!NOTE]
+> This repo has been archived and is no longer under development. OpenCredo is now part of [Trifork](https://github.com/trifork).
+
 Web acceptance testing - where do you start? This is a quickstart project with good practice that you can clone and extend, rather than having to google constantly to find out the basics. There's some very powerful stuff included in this project which is ready to use out of the box, including parallel execution, browserstack integration, and aliased random data persistence.
 
 Features
